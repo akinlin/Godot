@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxayjjb0w2oqc"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/Player/Player.gd" id="1_2aubc"]
+[ext_resource type="PackedScene" uid="uid://hjen14wf8hkn" path="res://Scenes/Card Game/Player/hand.tscn" id="2_to3qd"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_2aubc")
+
+[node name="Hand" parent="." instance=ExtResource("2_to3qd")]
