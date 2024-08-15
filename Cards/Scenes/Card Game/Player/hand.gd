@@ -22,19 +22,25 @@ func add_card(card):
 	update_hand()
 
 func remove_card(card):
+	card.flip()
+	card.position = Vector2(0, 0)
 	hand.erase(card)
 	remove_child(card)
 	update_hand()
 
 func discard():
-	var returned_card = discard_array
-	for i in range(returned_card.size()):
-		var card = discard_array[i]
-		card.flip()
-		card.position = Vector2(0, 0)
+	var discard_hand = discard_array.duplicate()
+	for i in range(discard_hand.size()):
+		var card = discard_hand[i]
 		remove_card(card)
 	discard_array.clear()
-	return returned_card
+	return discard_hand
+
+func play_hand():
+	var played_hand = hand.duplicate()
+	for card in played_hand:
+		remove_card(card)
+	return played_hand
 
 func _on_card_selected(card):
 	if card in discard_array:

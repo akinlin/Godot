@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Card Game/Player/Player.gd" id="1_2aubc"]
 [ext_resource type="PackedScene" uid="uid://hjen14wf8hkn" path="res://Scenes/Card Game/Player/hand.tscn" id="2_to3qd"]
-[ext_resource type="Texture2D" uid="uid://d30xcnafoomjm" path="res://Art/Textures/Cards/Backs/Back2.png" id="3_ckjyj"]
+[ext_resource type="Texture2D" uid="uid://d30xcnafoomjm" path="res://Assets/Textures/Cards/Backs/Back2.png" id="3_lb5ex"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_2aubc")
@@ -11,4 +11,4 @@ script = ExtResource("1_2aubc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("3_ckjyj")
+texture = ExtResource("3_lb5ex")

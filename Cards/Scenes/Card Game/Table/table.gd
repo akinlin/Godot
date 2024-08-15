@@ -3,6 +3,7 @@ extends Node
 @onready var game_rules = $GameRules
 @onready var deck = $Deck
 @onready var deck_location = $DeckLocation
+@onready var result = $ResultDisplay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,13 @@ func discard(cards):
 		var card = cards[i]
 		if card:
 			deck.discard_card(card)
+
+func play_hand(hand):
+	# Do something with the hand
+	if randi() % 2:
+		result.show_result("You Win!", 1.5, Color.GREEN)
+	else:
+		result.show_result("You Lose!", 1.5, Color.RED)
 
 func get_hand_size():
 	return game_rules.handsize

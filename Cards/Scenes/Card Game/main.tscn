@@ -35,6 +35,15 @@ offset_bottom = 236.0
 scale = Vector2(2.2, 1.56)
 text = "Discard"
 
+[node name="PlayHandButton" type="Button" parent="Game/UI"]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 266.0
+offset_right = 1069.0
+offset_bottom = 297.0
+scale = Vector2(1.72, 1.48)
+text = "Play Hand"
+
 [node name="Table" parent="Game" instance=ExtResource("2_at0td")]
 position = Vector2(700, 467)
 
@@ -43,3 +52,4 @@ position = Vector2(347, 580)
 
 [connection signal="pressed" from="Game/UI/DealButton" to="Game" method="_on_deal_button_pressed"]
 [connection signal="pressed" from="Game/UI/DiscardButton" to="Game" method="_on_discard_button_pressed"]
+[connection signal="pressed" from="Game/UI/PlayHandButton" to="Game" method="_on_play_hand_button_pressed"]

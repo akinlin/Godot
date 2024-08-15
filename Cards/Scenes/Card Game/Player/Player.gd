@@ -21,5 +21,8 @@ func add_hand_cards(cards):
 func discard():
 	return hand.discard()
 
+func get_played_hand():
+	return hand.play_hand()
+
 func get_hand_count():
 	return hand.hand.size()

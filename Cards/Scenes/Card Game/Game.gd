@@ -22,3 +22,8 @@ func _on_discard_button_pressed():
 	var cards = player.discard()
 	if cards:
 		table.discard(cards)
+
+func _on_play_hand_button_pressed():
+	var cards = player.get_played_hand()
+	if cards:
+		table.play_hand(cards)

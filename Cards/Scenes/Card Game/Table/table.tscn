@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2bkwccbjcuv0"]
+[gd_scene load_steps=8 format=3 uid="uid://b2bkwccbjcuv0"]
 
 [ext_resource type="Script" path="res://Scenes/Card Game/Table/table.gd" id="1_psnsn"]
-[ext_resource type="Texture2D" uid="uid://djwno46wiicff" path="res://Art/Textures/Cards/poker table top.jpg" id="2_8csqx"]
 [ext_resource type="Script" path="res://Scenes/Card Game/Table/GameRules.gd" id="2_ofqms"]
 [ext_resource type="Script" path="res://Scenes/Card Game/Table/DeckLocation.gd" id="4_yu53e"]
+[ext_resource type="Texture2D" uid="uid://djwno46wiicff" path="res://Assets/Textures/Cards/poker table top.jpg" id="5_0tf0p"]
 [ext_resource type="PackedScene" uid="uid://ctrm5dlqeguc3" path="res://Scenes/Card Game/Deck/deck.tscn" id="5_djc6g"]
+[ext_resource type="Script" path="res://Scenes/Card Game/Table/ResultDisplay.gd" id="6_6ywe4"]
+[ext_resource type="Script" path="res://Assets/Fonts/Nordic.gd" id="7_lvdri"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_psnsn")
@@ -16,10 +18,25 @@ script = ExtResource("2_ofqms")
 position = Vector2(-372, -235)
 
 [node name="DeckLocation" type="Node2D" parent="."]
+visible = false
 position = Vector2(-367, -232)
 script = ExtResource("4_yu53e")
 
 [node name="Table Top" type="Sprite2D" parent="."]
 z_index = -1
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_8csqx")
+texture = ExtResource("5_0tf0p")
+
+[node name="ResultDisplay" type="Node2D" parent="."]
+position = Vector2(-151, -49)
+script = ExtResource("6_6ywe4")
+
+[node name="Label" type="Label" parent="ResultDisplay"]
+offset_right = 50.0
+offset_bottom = 23.0
+scale = Vector2(4, 4)
+script = ExtResource("7_lvdri")
+
+[node name="Timer" type="Timer" parent="ResultDisplay"]
+
+[connection signal="timeout" from="ResultDisplay/Timer" to="ResultDisplay" method="_on_timer_timeout"]
