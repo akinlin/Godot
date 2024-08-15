@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5posfbm6j63"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/main.gd" id="1_frq07"]
+[ext_resource type="PackedScene" uid="uid://b2bkwccbjcuv0" path="res://Scenes/Card Game/Table/table.tscn" id="2_at0td"]
+[ext_resource type="PackedScene" uid="uid://ctrm5dlqeguc3" path="res://Scenes/Card Game/Deck/deck.tscn" id="3_3avcm"]
+[ext_resource type="PackedScene" uid="uid://bxayjjb0w2oqc" path="res://Scenes/Card Game/Player/player.tscn" id="5_osl54"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_frq07")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Game" type="Node" parent="."]
+
+[node name="Table" parent="Game" instance=ExtResource("2_at0td")]
+position = Vector2(700, 467)
+
+[node name="Deck" parent="Game/Table" instance=ExtResource("3_3avcm")]
+position = Vector2(-398, -275)
+
+[node name="Player" parent="Game" instance=ExtResource("5_osl54")]
+position = Vector2(347, 580)

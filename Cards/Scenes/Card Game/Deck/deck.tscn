@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctrm5dlqeguc3"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/Deck/Deck.gd" id="1_b2d7j"]
+[ext_resource type="PackedScene" uid="uid://bp457i7x67sc3" path="res://Scenes/Card Game/Card/card.tscn" id="2_sp5b7"]
+[ext_resource type="Script" path="res://Scenes/Card Game/Deck/DeckConfig.gd" id="3_a380h"]
+[ext_resource type="Texture2D" uid="uid://dt8wn7pck5nfm" path="res://Art/Textures/Cards/Backs/Back4.png" id="3_sl55e"]
+[ext_resource type="Texture2D" uid="uid://ln43rv7a3si3" path="res://Art/Textures/Cards/Backs/Back3.png" id="4_3h3r5"]
+
+[node name="Deck" type="Node2D"]
+script = ExtResource("1_b2d7j")
+card_scene = ExtResource("2_sp5b7")
+
+[node name="DeckConfig" type="Node" parent="."]
+script = ExtResource("3_a380h")
+
+[node name="DeckShoe" type="Node2D" parent="."]
+
+[node name="EmptyShoeImage" type="Sprite2D" parent="DeckShoe"]
+texture = ExtResource("3_sl55e")
+
+[node name="DiscardPile" type="Node2D" parent="."]
+position = Vector2(541, -2)
+
+[node name="EmptyDiscardImage" type="Sprite2D" parent="DiscardPile"]
+texture = ExtResource("4_3h3r5")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2bkwccbjcuv0"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/Table/table.gd" id="1_psnsn"]
+[ext_resource type="Texture2D" uid="uid://djwno46wiicff" path="res://Art/Textures/Cards/poker table top.jpg" id="2_8csqx"]
+[ext_resource type="Script" path="res://Scenes/Card Game/Table/GameRules.gd" id="2_ofqms"]
+[ext_resource type="Script" path="res://Scenes/Card Game/Table/DeckLocation.gd" id="4_yu53e"]
+[ext_resource type="PackedScene" uid="uid://ctrm5dlqeguc3" path="res://Scenes/Card Game/Deck/deck.tscn" id="5_djc6g"]
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_psnsn")
+
+[node name="GameRules" type="Node" parent="."]
+script = ExtResource("2_ofqms")
+
+[node name="Deck" parent="." instance=ExtResource("5_djc6g")]
+position = Vector2(-372, -235)
+
+[node name="DeckLocation" type="Node2D" parent="."]
+position = Vector2(-367, -232)
+script = ExtResource("4_yu53e")
+
+[node name="Table Top" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_8csqx")

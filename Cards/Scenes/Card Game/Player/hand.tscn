@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hjen14wf8hkn"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/Player/hand.gd" id="1_xashs"]
+
+[node name="Hand" type="Node2D"]
+script = ExtResource("1_xashs")

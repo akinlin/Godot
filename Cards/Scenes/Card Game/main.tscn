@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5posfbm6j63"]
+
+[ext_resource type="Script" path="res://Scenes/Card Game/main.gd" id="1_frq07"]
+[ext_resource type="PackedScene" uid="uid://b2bkwccbjcuv0" path="res://Scenes/Card Game/Table/table.tscn" id="2_at0td"]
+[ext_resource type="Script" path="res://Scenes/Card Game/Game.gd" id="2_biyjq"]
+[ext_resource type="PackedScene" uid="uid://bxayjjb0w2oqc" path="res://Scenes/Card Game/Player/player.tscn" id="5_osl54"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_frq07")
+
+[node name="Game" type="Node" parent="."]
+script = ExtResource("2_biyjq")
+
+[node name="UI" type="Control" parent="Game"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DealButton" type="Button" parent="Game/UI"]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 143.0
+offset_right = 1048.0
+offset_bottom = 177.0
+scale = Vector2(2.2, 1.56)
+text = "Deal"
+
+[node name="DiscardButton" type="Button" parent="Game/UI"]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 205.0
+offset_right = 1050.0
+offset_bottom = 236.0
+scale = Vector2(2.2, 1.56)
+text = "Discard"
+
+[node name="Table" parent="Game" instance=ExtResource("2_at0td")]
+position = Vector2(700, 467)
+
+[node name="Player" parent="Game" instance=ExtResource("5_osl54")]
+position = Vector2(347, 580)
+
+[connection signal="pressed" from="Game/UI/DealButton" to="Game" method="_on_deal_button_pressed"]
+[connection signal="pressed" from="Game/UI/DiscardButton" to="Game" method="_on_discard_button_pressed"]
